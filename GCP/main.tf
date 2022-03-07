@@ -18,7 +18,7 @@ resource "null_resource" "ssh_key" {
     command = "chmod 400 /tmp/'${var.key_name}'.pem"
   }
   provisioner "local-exec" {
-    command = "cp /tmp/'${var.key_name}'.pem ./'${var.key_name}'.pem"
+    command = "cp /tmp/'${var.key_name}'.pem ../'${var.key_name}'.pem"
   }
 }
 
