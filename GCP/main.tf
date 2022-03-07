@@ -22,6 +22,7 @@ resource "null_resource" "ssh_key" {
 resource "google_compute_firewall" "terraguard" {
   name    = "terraguard-firewall"
   network = var.vpc
+  source_ranges = ["0.0.0.0/0"]
 
   allow {
     protocol = "icmp"
