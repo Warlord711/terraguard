@@ -19,6 +19,7 @@ resource "null_resource" "ssh_key" {
   }
   provisioner "local-exec" {
     command = "cp /tmp/'${var.key_name}'.pem ./'${var.key_name}'.pem"
+  }
 }
 
 resource "google_compute_firewall" "terraguard" {
