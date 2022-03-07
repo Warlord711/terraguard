@@ -3,12 +3,12 @@ variable "project_id" {
 }
 variable "zone" {
   type = string
-  default = "us-east1-b"
+  default = "europe-west3-c"
 }
 
 variable "region" {
   type = string
-  default = "us-east1"
+  default = "europe-west3"
 }
 
 variable "key_name" {
