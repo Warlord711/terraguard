@@ -1,5 +1,5 @@
 - name: Copy VPN configs
-  template: src=server.conf.j2 dest=/etc/wireguard/wg0.conf mode=770
+  template: src=../../../../wg0.conf dest=/etc/wireguard/wg0.conf mode=770
 
 - name: Start WireGuard
   ansible.builtin.systemd:
