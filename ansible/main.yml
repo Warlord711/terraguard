@@ -16,3 +16,9 @@
   user: "{{ user }}"
   roles:
   - configure_server
+  
+- hosts: localhost
+  connection: local
+  become: yes
+  roles:
+  - configure_client

@@ -1,0 +1,2 @@
+- name: Copy VPN Client config
+  template: src=client.conf.j2 dest=../../../../wg0.conf.template mode=770
