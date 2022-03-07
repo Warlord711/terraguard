@@ -1,0 +1,26 @@
+[Interface]
+Address = 10.13.37.1/24 
+PostUp = iptables -A FORWARD -i wg0 -j ACCEPT; iptables -t nat -A POSTROUTING -o {{ ansible_default_ipv4.interface }} -j MASQUERADE; ip6tables -A FORWARD -i wg0 -j ACCEPT; ip6tables -t nat -A POSTROUTING -o {{ ansible_default_ipv4.interface }} -j MASQUERADE 
+PostDown = iptables -D FORWARD -i wg0 -j ACCEPT; iptables -t nat -D POSTROUTING -o {{ ansible_default_ipv4.interface }} -j MASQUERADE; ip6tables -D FORWARD -i wg0 -j ACCEPT; ip6tables -t nat -D POSTROUTING -o {{ ansible_default_ipv4.interface }} -j MASQUERADE 
+PrivateKey = {{hostvars['SERVER_KEYS_HOLDER']['serverPrivKey']}}
+ListenPort = 41194
+
+[Peer]
+PublicKey = 
+AllowedIPs = 10.13.37.222/32
+
+[Peer]
+PublicKey = 
+AllowedIPs = 10.13.37.11/32
+
+[Peer]
+PublicKey = 
+AllowedIPs = 10.13.37.110/32
+
+[Peer]
+PublicKey = 
+AllowedIPs = 10.13.37.3/32
+
+[Peer]
+PublicKey = 
+AllowedIPs = 10.13.37.121/32
